@@ -1,3 +1,5 @@
+**Live Demo:** [https://hidden-gems-4twl.onrender.com](https://hidden-gems-4twl.onrender.com)
+
 # ⛰️ HiddenGems – Crowdsourced Hidden Gems Explorer
 
 A full-stack web application to discover, share, and navigate to hidden spots, secret viewpoints, and local gems around the world. Built with a vanilla JavaScript frontend and a Node.js/Express backend.
