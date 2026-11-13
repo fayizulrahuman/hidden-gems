@@ -1,63 +1,46 @@
-**Live Demo:** [https://hidden-gems-4twl.onrender.com](https://hidden-gems-4twl.onrender.com)
-
 # ⛰️ HiddenGems – Crowdsourced Hidden Gems Explorer
 
-A full-stack web application to discover, share, and navigate to hidden spots, secret viewpoints, and local gems around the world. Built with a vanilla JavaScript frontend and a Node.js/Express backend.
+**Live Demo:** [https://hidden-gems-4twl.onrender.com](https://hidden-gems-4twl.onrender.com)
+
+A full-stack, PWA-ready web application to discover, share, and navigate to hidden spots, secret viewpoints, and local gems around the world. Built with a vanilla JavaScript frontend, a Node.js/Express backend, MongoDB, and secured by Firebase Authentication.
 
 ## ✨ Features
 
+### 🗺️ Discovery & Navigation
 *   **Interactive Maps:** Powered by MapLibre GL JS and OpenFreeMap (100% free, no API keys required).
+*   **Proximity Radar Alerts:** Get notified when another user adds a hidden gem within 20km of your current location.
 *   **Real-time Driving Distances:** Automatically calculates road distances from your location to any hidden gem using the OSRM routing engine.
 *   **Smart Fuel Calculator:** Estimates fuel costs and per-person trip costs based on your vehicle's mileage and current fuel prices.
+
+### 🌤️ Trip Planning
+*   **Live Weather Integration:** Automatically fetches current weather conditions for any gem using the Open-Meteo API.
 *   **Search & Filter:** Find gems by country, state, district, categories, or tags (e.g., Free, Dog-Friendly, Requires Hiking).
-*   **Image Uploads:** Photos are permanently stored in the cloud using Cloudinary.
-*   **User Accounts:** Secure JWT authentication with password hashing.
-*   **PWA Ready:** Can be installed on iOS and Android as a standalone app (Add to Home Screen).
+*   **Itinerary Builder:** Save gems to your "Trips" or "Favorites" list for easy access later.
+
+### 👥 Community & Gamification
+*   **Social Interactions:** Upvote, Verify (mark as still open), and leave detailed text Reviews on gems.
+*   **Smart Notifications:** A built-in notification bell alerts users to upvotes, new reviews, verifications, and system updates (like gems in their favorites being edited).
+*   **Top Explorers Leaderboard:** A gamified dashboard ranking users by the number of hidden gems they have contributed.
+*   **Milestone Achievements:** Users receive special notifications when their gems reach 10 upvotes or become community-verified.
+*   **Native Share API:** Share hidden gems directly to WhatsApp, Instagram, and other apps (works on HTTPS environments).
+*   **Image Uploads:** High-quality photos are permanently stored in the cloud using Cloudinary.
+
+### 📱 Progressive Web App (PWA)
+*   **Installable:** Can be added to the home screen on iOS and Android as a standalone app.
+*   **Offline Caching:** Service workers cache the app shell so the UI loads instantly.
 
 ## 🛠️ Tech Stack
 
-*   **Frontend:** HTML, CSS, Vanilla JavaScript
+*   **Frontend:** HTML, CSS, Vanilla JavaScript, FontAwesome, MapLibre GL JS
 *   **Backend:** Node.js, Express.js
 *   **Database:** MongoDB (via Mongoose)
+*   **Authentication:** Firebase Auth (Client & Admin SDKs)
 *   **Image Storage:** Cloudinary
-*   **Maps & Routing:** MapLibre GL JS, OpenFreeMap, OSRM API
+*   **External APIs:** OpenFreeMap, OSRM, Open-Meteo
 
 ## 🚀 Local Setup Instructions
 
 1. **Clone the repository:**
+   ```bash
    git clone https://github.com/YOUR_USERNAME/hidden-gems.git
    cd hidden-gems
-
-2. **Install dependencies:**
-   npm install
-
-3. **Set up Environment Variables:**
-   Create a `.env` file in the root directory and add the following keys:
-   PORT=3000
-   JWT_SECRET=your_super_secret_jwt_string
-   
-   # MongoDB (Create a free cluster at mongodb.com/atlas)
-   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/hiddengems?retryWrites=true&w=majority
-   
-   # Cloudinary (Create a free account at cloudinary.com)
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API_KEY=your_api_key
-   CLOUDINARY_API_SECRET=your_api_secret
-
-4. **Run the app locally:**
-   npm start
-   Open `http://localhost:3000` in your browser.
-
-## ☁️ Deployment
-
-This app is configured to be deployed easily on **Render** (Free Tier).
-1. Push your code to GitHub.
-2. Create a new **Web Service** on Render.
-3. Set the Build Command to `npm install` and the Start Command to `npm start`.
-4. Add all the variables from your `.env` file into Render's **Environment Variables** section.
-
-*(Note: On Render's free tier, the app will "sleep" after 15 minutes of inactivity. The first visit after it sleeps may take 30-50 seconds to load).*
-
-## 📝 License
-
-This project is open-source and available under the [MIT License](LICENSE).
