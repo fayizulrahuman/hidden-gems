@@ -1,6 +1,7 @@
 // Service worker: caches the app shell so HiddenGems opens fast and works offline-ish.
-const CACHE = 'hiddengems-v4';
+const CACHE = 'hiddengems-v7'; // BUMPED VERSION to force update
 const SHELL = ['/', '/index.html', '/style.css', '/app.js', '/manifest.json', '/icon-192.png', '/icon-512.png'];
+
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== CACHE).map(x => caches.delete(x)))).then(() => self.clients.claim())); });
 self.addEventListener('fetch', e => {
