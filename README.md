@@ -37,10 +37,3 @@ A full-stack, PWA-ready web application to discover, share, and navigate to hidd
 *   **Authentication:** Firebase Auth (Client & Admin SDKs)
 *   **Image Storage:** Cloudinary
 *   **External APIs:** OpenFreeMap, OSRM, Open-Meteo
-
-## 🚀 Local Setup Instructions
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/hidden-gems.git
-   cd hidden-gems
